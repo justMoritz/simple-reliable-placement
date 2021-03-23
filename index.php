@@ -96,6 +96,102 @@
       <div class="layoutcontainer__controls layourcontrols">
         <div class="layourcontrols__inner">
 
+
+          <fieldset>
+            <h2>Logo Controls</h2>
+
+             <label for="logoinput" class="layourcontrols__label">
+              <h5>Upload Logo</h5>
+              <input
+                type="file"
+                id="logoinput"
+                class="srp__imagecontrol layourcontrols__logo"
+                data-srp-parent="blabla"
+                data-srp-target="XYZ"
+                data-srp-changes="bgimg"
+              />
+            </label>
+
+            <div class="layourcontrols__col2">
+              <label for="logoleft" class="layourcontrols__label">
+                <h5>Left (in inches, from Illustrator)</h5>
+                <input
+                  type="number"
+                  step="0.05"
+                  id="logoleft"
+                  class="srp__control layourcontrols__fontsize"
+                  data-srp-parent="blabla"
+                  data-srp-target="XYZ"
+                  data-srp-changes="left"
+                />
+              </label>
+
+              <label for="logotop" class="layourcontrols__label">
+                <h5>Top (in inches, from Illustrator)</h5>
+                <input
+                  type="number"
+                  step="0.05"
+                  id="logotop"
+                  class="srp__control layourcontrols__fontsize"
+                  data-srp-parent="blabla"
+                  data-srp-target="XYZ"
+                  data-srp-changes="top"
+                  value="1"
+                />
+              </label>
+            </div>
+
+            <div class="layourcontrols__col2">
+               <label for="logowidth" class="layourcontrols__label">
+                <h5>Width (in inches, from Illustrator)</h5>
+                <input
+                  type="number"
+                  step="0.05"
+                  id="logowidth"
+                  class="srp__control layourcontrols__fontsize"
+                  data-srp-parent="blabla"
+                  data-srp-target="XYZ"
+                  data-srp-changes="width"
+                  value="2.5"
+                />
+              </label>
+
+              <label for="logoheight" class="layourcontrols__label">
+                <h5>Height (in inches, from Illustrator)</h5>
+                <input
+                  type="number"
+                  step="0.05"
+                  id="logoheight"
+                  class="srp__control layourcontrols__fontsize"
+                  data-srp-parent="blabla"
+                  data-srp-target="XYZ"
+                  data-srp-changes="height"
+                  value="2.5"
+                />
+              </label>
+            </div>
+
+            <label for="logocenter" class="layourcontrols__label">
+              <h5>Center Element, will disregard Left Value</h5>
+              <input
+                type="number"
+                step="1"
+                min="0"
+                max="1"
+                style="width: 50px";
+                id="logocenter"
+                class="srp__control layourcontrols__fontsize"
+                data-srp-parent="blabla"
+                data-srp-target="XYZ"
+                data-srp-changes="iscenter"
+                value="1"
+              />
+              (1 for yes, 0 for no)
+            </label>
+
+          </fieldset>
+
+
           <fieldset>
             <h2>Headline Controls</h2>
 
@@ -189,7 +285,7 @@
             </div>
 
             <label for="headlinecenter" class="layourcontrols__label">
-              <h5>Center Element (1 for yes, 0 for no), will disregard Left Value</h5>
+              <h5>Center Element, will disregard Left Value</h5>
               <input
                 type="number"
                 step="1"
@@ -202,108 +298,12 @@
                 data-srp-target="001"
                 data-srp-changes="iscenter"
               />
+              (1 for yes, 0 for no)
             </label>
 
           </fieldset>
 
 
-
-
-
-          <fieldset>
-            <h2>Logo Controls</h2>
-
-             <label for="logoinput" class="layourcontrols__label">
-              <h5>Upload Logo</h5>
-              <input
-                type="file"
-                id="logoinput"
-                class="srp__imagecontrol layourcontrols__logo"
-                data-srp-parent="blabla"
-                data-srp-target="XYZ"
-                data-srp-changes="bgimg"
-              />
-            </label>
-
-            <div class="layourcontrols__col2">
-              <label for="logoleft" class="layourcontrols__label">
-                <h5>Left (in inches, from Illustrator)</h5>
-                <input
-                  type="number"
-                  step="0.05"
-                  id="logoleft"
-                  class="srp__control layourcontrols__fontsize"
-                  data-srp-parent="blabla"
-                  data-srp-target="XYZ"
-                  data-srp-changes="left"
-                />
-              </label>
-
-              <label for="logotop" class="layourcontrols__label">
-                <h5>Top (in inches, from Illustrator)</h5>
-                <input
-                  type="number"
-                  step="0.05"
-                  id="logotop"
-                  class="srp__control layourcontrols__fontsize"
-                  data-srp-parent="blabla"
-                  data-srp-target="XYZ"
-                  data-srp-changes="top"
-                  value="1"
-                />
-              </label>
-            </div>
-
-            <div class="layourcontrols__col2">
-               <label for="logowidth" class="layourcontrols__label">
-                <h5>Width (in inches, from Illustrator)</h5>
-                <input
-                  type="number"
-                  step="0.05"
-                  id="logowidth"
-                  class="srp__control layourcontrols__fontsize"
-                  data-srp-parent="blabla"
-                  data-srp-target="XYZ"
-                  data-srp-changes="width"
-                  value="2.5"
-                />
-              </label>
-
-              <label for="logoheight" class="layourcontrols__label">
-                <h5>Height (in inches, from Illustrator)</h5>
-                <input
-                  type="number"
-                  step="0.05"
-                  id="logoheight"
-                  class="srp__control layourcontrols__fontsize"
-                  data-srp-parent="blabla"
-                  data-srp-target="XYZ"
-                  data-srp-changes="height"
-                  value="2.5"
-                />
-              </label>
-            </div>
-
-            <label for="logocenter" class="layourcontrols__label">
-              <h5>Center Element (1 for yes, 0 for no), will disregard Left Value</h5>
-              <input
-                type="number"
-                step="1"
-                min="0"
-                max="1"
-                style="width: 50px";
-                id="logocenter"
-                class="srp__control layourcontrols__fontsize"
-                data-srp-parent="blabla"
-                data-srp-target="XYZ"
-                data-srp-changes="iscenter"
-                value="1"
-              />
-            </label>
-
-
-
-          </fieldset>
 
         </div>
       </div>
