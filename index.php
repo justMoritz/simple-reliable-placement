@@ -59,7 +59,8 @@
             data-srp-height="9"
             data-srp-id="blabla"
           >
-            <img src="img/baseline-01.png" alt="" class="layoutpreview__background">
+            <img src="img/sans-01.png" alt="" class="layoutpreview__background">
+
             <div
               class="srp__element srp__text"
               data-srp-child-id="001"
@@ -78,7 +79,7 @@
             <div
               class="srp__element srp__image"
               data-srp-child-id="XYZ"
-              data-srp-iscenter="true"
+              data-srp-iscenter="1"
               data-srp-left=""
               data-srp-top="1"
               data-srp-width="2.5"
@@ -108,6 +109,7 @@
                   data-srp-parent="blabla"
                   data-srp-target="001"
                   data-srp-changes="text"
+                  value="Contemporary <br> Hill Country Living"
                 />
               </label>
 
@@ -115,12 +117,13 @@
               <label for="fontsizeinput" class="layourcontrols__label">
                 <h5>Font Size (in pt, from Illustrator)</h5>
                 <input
-                  type="text"
+                  type="number"
                   id="fontsizeinput"
                   class="srp__control layourcontrols__fontsize"
                   data-srp-parent="blabla"
                   data-srp-target="001"
                   data-srp-changes="fontsize"
+                  value="25"
                 />
               </label>
             </div>
@@ -129,24 +132,28 @@
               <label for="headlineleft" class="layourcontrols__label">
                 <h5>Left (in inches, from Illustrator)</h5>
                 <input
-                  type="text"
+                  type="number"
+                  step="0.05"
                   id="headlineleft"
                   class="srp__control layourcontrols__fontsize"
                   data-srp-parent="blabla"
                   data-srp-target="001"
                   data-srp-changes="left"
+                  value="0.25"
                 />
               </label>
 
               <label for="headlinetop" class="layourcontrols__label">
                 <h5>Top (in inches, from Illustrator)</h5>
                 <input
-                  type="text"
+                  type="number"
+                  step="0.05"
                   id="headlinetop"
                   class="srp__control layourcontrols__fontsize"
                   data-srp-parent="blabla"
                   data-srp-target="001"
                   data-srp-changes="top"
+                  value="3.85"
                 />
               </label>
             </div>
@@ -155,33 +162,41 @@
                <label for="headlinewidth" class="layourcontrols__label">
                 <h5>Width (in inches, from Illustrator)</h5>
                 <input
-                  type="text"
+                  type="number"
+                  step="0.05"
                   id="headlinewidth"
                   class="srp__control layourcontrols__fontsize"
                   data-srp-parent="blabla"
                   data-srp-target="001"
                   data-srp-changes="width"
+                  value="3.5"
                 />
               </label>
 
               <label for="headlineheight" class="layourcontrols__label">
                 <h5>Height (in inches, from Illustrator)</h5>
                 <input
-                  type="text"
+                  type="number"
+                  step="0.05"
                   id="headlineheight"
                   class="srp__control layourcontrols__fontsize"
                   data-srp-parent="blabla"
                   data-srp-target="001"
                   data-srp-changes="height"
+                  value="2"
                 />
               </label>
             </div>
 
-            <label for="headlineheight" class="layourcontrols__label">
-              <h5>Center Element (will disregard Left Value)</h5>
+            <label for="headlinecenter" class="layourcontrols__label">
+              <h5>Center Element (1 for yes, 0 for no), will disregard Left Value</h5>
               <input
-                type="checkbox"
-                id="headlineheight"
+                type="number"
+                step="1"
+                min="0"
+                max="1"
+                style="width: 50px";
+                id="headlinecenter"
                 class="srp__control layourcontrols__fontsize"
                 data-srp-parent="blabla"
                 data-srp-target="001"
@@ -190,6 +205,10 @@
             </label>
 
           </fieldset>
+
+
+
+
 
           <fieldset>
             <h2>Logo Controls</h2>
@@ -210,7 +229,8 @@
               <label for="logoleft" class="layourcontrols__label">
                 <h5>Left (in inches, from Illustrator)</h5>
                 <input
-                  type="text"
+                  type="number"
+                  step="0.05"
                   id="logoleft"
                   class="srp__control layourcontrols__fontsize"
                   data-srp-parent="blabla"
@@ -222,12 +242,14 @@
               <label for="logotop" class="layourcontrols__label">
                 <h5>Top (in inches, from Illustrator)</h5>
                 <input
-                  type="text"
+                  type="number"
+                  step="0.05"
                   id="logotop"
                   class="srp__control layourcontrols__fontsize"
                   data-srp-parent="blabla"
                   data-srp-target="XYZ"
                   data-srp-changes="top"
+                  value="1"
                 />
               </label>
             </div>
@@ -236,38 +258,46 @@
                <label for="logowidth" class="layourcontrols__label">
                 <h5>Width (in inches, from Illustrator)</h5>
                 <input
-                  type="text"
+                  type="number"
+                  step="0.05"
                   id="logowidth"
                   class="srp__control layourcontrols__fontsize"
                   data-srp-parent="blabla"
                   data-srp-target="XYZ"
                   data-srp-changes="width"
+                  value="2.5"
                 />
               </label>
 
               <label for="logoheight" class="layourcontrols__label">
                 <h5>Height (in inches, from Illustrator)</h5>
                 <input
-                  type="text"
+                  type="number"
+                  step="0.05"
                   id="logoheight"
                   class="srp__control layourcontrols__fontsize"
                   data-srp-parent="blabla"
                   data-srp-target="XYZ"
                   data-srp-changes="height"
+                  value="2.5"
                 />
               </label>
             </div>
 
-            <label for="headlineheight" class="layourcontrols__label">
-              <h5>Center Element (will disregard Left Value)</h5>
+            <label for="logocenter" class="layourcontrols__label">
+              <h5>Center Element (1 for yes, 0 for no), will disregard Left Value</h5>
               <input
-                type="checkbox"
-                id="headlineheight"
+                type="number"
+                step="1"
+                min="0"
+                max="1"
+                style="width: 50px";
+                id="logocenter"
                 class="srp__control layourcontrols__fontsize"
                 data-srp-parent="blabla"
                 data-srp-target="XYZ"
                 data-srp-changes="iscenter"
-                value="on"
+                value="1"
               />
             </label>
 

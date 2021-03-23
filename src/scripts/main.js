@@ -91,7 +91,7 @@ var srpjs = (function(){
       _recalcFontSizes( $parentelem );
     }
 
-    if( iscenter ){
+    if( iscenter == '1' ){
       $childelem.style.left = "50%";
       $childelem.classList.add('this--iscenter');
     }else{

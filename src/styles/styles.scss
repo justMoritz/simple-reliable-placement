@@ -132,6 +132,7 @@ input{
   .this--iscenter{
     left: 50%;
     transform: translateX(-50%);
+    text-align: center;
   }
 }
 
@@ -143,5 +144,4 @@ input{
   font-size: 20px;
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  text-align: center;
 }
