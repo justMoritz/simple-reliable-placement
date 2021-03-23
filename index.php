@@ -1,6 +1,6 @@
 <?php
 
-  $globalVersion = '0.1.0';
+  $globalVersion = '0.2.0';
 
 ?>
 
@@ -84,7 +84,7 @@
               data-srp-top="1"
               data-srp-width="2.5"
               data-srp-height="2.5"
-              data-srp-bgimg=""
+              data-srp-bgimg="/img/lowgow.png"
               data-srp-description="Logo"
             ></div>
 
@@ -172,7 +172,7 @@
             </div>
 
             <label for="logocenter" class="layourcontrols__label">
-              <h5>Center Element, will disregard Left Value</h5>
+              <h5>Center Element, will disregard “Left” value</h5>
               <input
                 type="number"
                 step="1"
@@ -285,7 +285,7 @@
             </div>
 
             <label for="headlinecenter" class="layourcontrols__label">
-              <h5>Center Element, will disregard Left Value</h5>
+              <h5>Center Element, will disregard “Left” value</h5>
               <input
                 type="number"
                 step="1"
@@ -304,13 +304,33 @@
           </fieldset>
 
 
-
         </div>
       </div>
 
     </section>
 
-
+    <section class="about">
+      <br><br>
+      <p>Proof Of Concept Only</p>
+      <p>The SRP Toolkit uses JavaScript to calculate element's position and size based on inch- and pt- values (for example from Illustrator). Currently supported parameters are:
+      </p>
+      <ul>
+        <li>width
+        <li>height
+        <li>left
+        <li>top
+        <li>iscenter
+        <li>fontsize
+        <li>text
+        <li>color
+        <li>bgimg
+        <li>letterspacing
+      </ul>
+      <p>More than one SRP-Element (in this example, a brochure page) are theretically possible and supported. Each SRP-Eement can have any amount of child-elements. Controls can be set to control each parameter for each child-element (but not required).
+      </p>
+      <p>SRP calculates placement, sizing and font-size regardless of screen/view - size, and should theretically work well responsively. Mileage may vary.</p>
+      2021 by Moritz Zimmer.
+    </section>
 
 
   </body>

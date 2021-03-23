@@ -14,6 +14,17 @@ hr {
   border: none;
   border-top: 1px solid #aaa; }
 
+h1 {
+  text-align: center; }
+
+.about {
+  padding: 1% 5%; }
+
+.about,
+.layoutcontainer {
+  max-width: 1400px;
+  margin: 0 auto; }
+
 .layoutcontainer {
   width: 100%;
   display: flex; }
@@ -44,8 +55,7 @@ hr {
   padding-bottom: 100%;
   left: 0;
   top: 0;
-  margin: 0;
-  border: 1px solid gold; }
+  margin: 0; }
 .layoutpreview__background {
   position: absolute;
   width: 100%;
