@@ -1,6 +1,11 @@
 body {
   font-family: Arial; }
 
+label h5,
+label h4,
+label h3 {
+  margin-bottom: 0.25em; }
+
 fieldset {
   border: 1px solid #aaa;
   margin: 1%; }
@@ -9,15 +14,12 @@ hr {
   border: none;
   border-top: 1px solid #aaa; }
 
-input {
-  width: 90%; }
-
 .layoutcontainer {
   width: 100%;
   display: flex; }
   .layoutcontainer__controls, .layoutcontainer__preview {
     width: 50%; }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     .layoutcontainer {
       flex-direction: column; }
       .layoutcontainer__controls, .layoutcontainer__preview {
@@ -31,6 +33,10 @@ input {
   display: flex; }
   .layourcontrols__col2 > * {
     width: 50%; }
+@media (min-width: 768px) {
+  .layourcontrols__inner {
+    position: sticky;
+    top: 0; } }
 
 .layoutpreview__fig {
   position: relative;
@@ -50,7 +56,23 @@ input {
 
 .srp__element {
   position: absolute;
-  border: 3px solid lightblue; }
+  border: 1px dotted lightblue;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain; }
+  .srp__element:before {
+    content: attr(data-srp-description);
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    background: lightblue;
+    color: white;
+    font-family: Arial !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: 10px !important;
+    padding: 2px !important; }
 .srp .this--iscenter {
   left: 50%;
   transform: translateX(-50%); }

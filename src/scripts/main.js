@@ -94,6 +94,13 @@ var srpjs = (function(){
     if( iscenter ){
       $childelem.style.left = "50%";
       $childelem.classList.add('this--iscenter');
+    }else{
+      if( left ){
+        $childelem.style.left = (left/parentWidth*100)+ '%';
+      }else{
+        $childelem.style.left = "auto";
+      }
+      $childelem.classList.remove('this--iscenter');
     }
 
 
@@ -115,10 +122,56 @@ var srpjs = (function(){
 
 
 
+  var _handleInputChange = function( $passedThis ){
+    // Reads desired Parent and Child destnations
+    // the type of change
+    // and what to change it to
+    var srpChanges = $passedThis.getAttribute('data-srp-changes');
+    var srpTarget  = $passedThis.getAttribute('data-srp-target');
+    var srpParent  = $passedThis.getAttribute('data-srp-parent');
+    var value      = $passedThis.value;
+
+    // finds Parent and Child Elements in the Dom
+    var $parent = document.querySelector('[data-srp-id="'+srpParent+'"]');
+    var $target = $parent.querySelector('[data-srp-child-id="'+srpTarget+'"]');
+
+    // updates the appropriate Data Attribute
+    $target.setAttribute('data-srp-'+srpChanges, value);
+
+    // applies the changes
+    _updateElements( $target, $parent );
+  };
+
+
+
+  var _readImage = function( input ) {
+    var srpTarget  = input.getAttribute('data-srp-target');
+    var srpParent  = input.getAttribute('data-srp-parent');
+
+    // finds Parent and Child Elements in the Dom
+    var $parent = document.querySelector('[data-srp-id="'+srpParent+'"]');
+    var $target = $parent.querySelector('[data-srp-child-id="'+srpTarget+'"]');
+
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        $target.setAttribute('data-srp-bgimg', e.target.result);
+        // applies the changes
+        _updateElements( $target, $parent );
+      }
+
+      reader.readAsDataURL(input.files[0]); // convert to base64 string
+    }
+  }
+
+
 
   var init = function(){
 
     var $allSrts = document.querySelectorAll(".srp");
+    var $allInputs = document.querySelectorAll(".srp__control");
+    var $allImageInputs = document.querySelectorAll(".srp__imagecontrol");
 
     for (var i = 0; i < $allSrts.length; i++) {
       _calculateAspectRatio( $allSrts[i] );
@@ -132,6 +185,23 @@ var srpjs = (function(){
         _recalcFontSizes( $allSrts[j] );
       }
     });
+
+
+    // on input change
+    for (var k = 0; k < $allInputs.length; k++) {
+      $allInputs[k].addEventListener('input', function(){
+        _handleInputChange( this );
+      });
+    }
+
+
+    // on IMAGE input change
+    for (var l = 0; l < $allImageInputs.length; l++) {
+      $allImageInputs[l].addEventListener('change', function(){
+        _readImage(this);
+      });
+    }
+
 
 
   };

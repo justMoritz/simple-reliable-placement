@@ -2,6 +2,12 @@ body{
   font-family: Arial;
 }
 
+label h5,
+label h4,
+label h3{
+  margin-bottom: 0.25em;
+}
+
 fieldset{
   border: 1px solid #aaa;
   margin: 1%;
@@ -17,7 +23,7 @@ hr{
 }
 
 input{
-  width: 90%;
+  // width: 90%;
 }
 
 
@@ -31,7 +37,7 @@ input{
     width: 50%;
   }
 
-  @media(max-width: 768px){
+  @media(max-width: 767px){
     flex-direction: column;
 
     &__controls,
@@ -55,6 +61,14 @@ input{
     display: flex;
     & > *{
       width: 50%;
+    }
+  }
+
+
+  @media(min-width: 768px){
+    &__inner{
+      position: sticky;
+      top: 0;
     }
   }
 }
@@ -93,7 +107,23 @@ input{
 
   &__element{
     position: absolute;
-    border: 3px solid lightblue;
+    border: 1px dotted lightblue;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &:before{
+      content:  attr(data-srp-description);
+      position: absolute; pointer-events: none;
+      left: 0; top: 0;
+      background: lightblue;
+      color: white;
+      font-family: Arial !important;
+      font-weight: 400 !important;
+      font-style: normal !important;
+      font-size: 10px !important;
+      padding: 2px !important;
+    }
   }
 
 
