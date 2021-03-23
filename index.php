@@ -84,7 +84,7 @@
               data-srp-top="1"
               data-srp-width="2.5"
               data-srp-height="2.5"
-              data-srp-bgimg="/img/lowgow.png"
+              data-srp-bgimg="./img/lowgow.png"
               data-srp-description="Logo"
             ></div>
 
@@ -96,6 +96,10 @@
       <div class="layoutcontainer__controls layourcontrols">
         <div class="layourcontrols__inner">
 
+          <fieldset>
+            <h2>For Reference:</h2>
+            This Demo Brochure is <em>4.025 in</em> wide x <em>9 in</em> tall.
+          </fieldset>
 
           <fieldset>
             <h2>Logo Controls</h2>
