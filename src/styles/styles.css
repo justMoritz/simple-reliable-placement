@@ -9,6 +9,8 @@ label h3 {
 fieldset {
   border: 1px solid #aaa;
   margin: 1%; }
+  fieldset:first-child {
+    margin-top: 0; }
 
 hr {
   border: none;

@@ -19,16 +19,26 @@ var srpjs = (function(){
   };
 
 
-  var _recalcFontSizes = function( $parentelem ){
+  var _recalcFontSizes = function( $parentelem, setting ){
 
-    var $allElementsWithFontSizes = $parentelem.querySelectorAll('[data-srp-fontsize]');
+    setting = setting || 'fontsize';
+
+    var _dataattribute = 'fontsize';
+    var _setting = 'fontSize';
+
+    if( setting == 'letterspacing' ){
+      _dataattribute = 'letterspacing';
+      _setting = 'letterSpacing'
+    }
+
+    var $allElementsWithFontSizes = $parentelem.querySelectorAll('[data-srp-'+_dataattribute+']');
     var parentInchWidth = $parentelem.getAttribute('data-srp-width');
     var parentRenderWidth = $parentelem.offsetWidth;
 
     // loops through all elements with a font-size
     for (var f = 0; f < $allElementsWithFontSizes.length; f++) {
       var $this = $allElementsWithFontSizes[f];
-      var desiredFontSize = $this.getAttribute('data-srp-fontsize');
+      var desiredFontSize = $this.getAttribute('data-srp-'+_dataattribute);
 
       // There are 0.013888888888889 inches in 1 point.
       // To convert from points to inches, multiply your figure by 0.013888888888889 (or divide by 72) .
@@ -39,10 +49,9 @@ var srpjs = (function(){
       // that ratio multiplied times the desiredPixelSize of the font
       var requiredFontSize = (parentRenderWidth / parentInchWidth) * desiredFontSizeInInches;
 
-      $this.style.fontSize = requiredFontSize + 'px';
+      $this.style[_setting] = requiredFontSize + 'px';
     }
   };
-
 
 
   var _updateElements = function( $childelem, $parentelem ){
@@ -81,14 +90,15 @@ var srpjs = (function(){
     if( text )
       $childelem.innerHTML = text;
 
-    if( letterspacing )
-      $childelem.style.letterSpacing = letterspacing + 'em';
-
     if( bgimg )
       $childelem.style.backgroundImage = 'url("'+bgimg+'")';
 
     if( fontsize ){
       _recalcFontSizes( $parentelem );
+    }
+
+    if( letterspacing ){
+      _recalcFontSizes( $parentelem, 'letterspacing' );
     }
 
     if( iscenter == '1' ){
