@@ -46,7 +46,7 @@ h1 {
   display: flex; }
   .layourcontrols__col2 > * {
     width: 50%; }
-@media (min-width: 768px) {
+@media (min-width: 1400px) {
   .layourcontrols__inner {
     position: sticky;
     top: 0; } }
