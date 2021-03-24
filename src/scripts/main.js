@@ -93,13 +93,11 @@ var srpjs = (function(){
     if( bgimg )
       $childelem.style.backgroundImage = 'url("'+bgimg+'")';
 
-    if( fontsize ){
+    if( fontsize )
       _recalcFontSizes( $parentelem );
-    }
 
-    if( letterspacing ){
+    if( letterspacing )
       _recalcFontSizes( $parentelem, 'letterspacing' );
-    }
 
     if( iscenter == '1' ){
       $childelem.style.left = "50%";
@@ -208,11 +206,9 @@ var srpjs = (function(){
     // on IMAGE input change
     for (var l = 0; l < $allImageInputs.length; l++) {
       $allImageInputs[l].addEventListener('change', function(){
-        _readImage(this);
+        _readImage( this );
       });
     }
-
-
 
   };
 
