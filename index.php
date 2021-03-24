@@ -103,6 +103,7 @@
 
           <fieldset>
             <h2>Logo Controls</h2>
+            (all are optional controls)
 
              <label for="logoinput" class="layourcontrols__label">
               <h5>Upload Logo</h5>
@@ -198,6 +199,7 @@
 
           <fieldset>
             <h2>Headline Controls</h2>
+            (all are optional controls)
 
             <div class="layourcontrols__col2">
               <label for="headlineinput" class="layourcontrols__label">
@@ -375,6 +377,7 @@
 
           <fieldset>
             <h2>Copy Controls</h2>
+            (all are optional controls)
 
             <label for="headlineinput2" class="layourcontrols__label">
               <h5>Headline-Text</h5>
@@ -407,7 +410,7 @@
               <label for="colorinput2" class="layourcontrols__label">
                 <h5>Color</h5>
                 <input
-                  type="text"
+                  type="color"
                   id="colorinput2"
                   class="srp__control layourcontrols__fontsize"
                   data-srp-parent="secondpage"
