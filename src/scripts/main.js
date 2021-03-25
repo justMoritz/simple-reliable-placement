@@ -19,26 +19,23 @@ var srpjs = (function(){
   };
 
 
-  var _recalcFontSizes = function( $parentelem, setting ){
+  var _recalcFontSizes = function( $parentelem, attribute ){
 
-    setting = setting || 'fontsize';
-
-    var _dataattribute = 'fontsize';
+    attribute = attribute || 'fontsize';
     var _setting = 'fontSize';
 
-    if( setting == 'letterspacing' ){
-      _dataattribute = 'letterspacing';
+    if( attribute == 'letterspacing' ){
       _setting = 'letterSpacing'
     }
 
-    var $allElementsWithFontSizes = $parentelem.querySelectorAll('[data-srp-'+_dataattribute+']');
+    var $allElementsWithFontSizes = $parentelem.querySelectorAll('[data-srp-'+attribute+']');
     var parentInchWidth = $parentelem.getAttribute('data-srp-width');
     var parentRenderWidth = $parentelem.offsetWidth;
 
     // loops through all elements with a font-size
     for (var f = 0; f < $allElementsWithFontSizes.length; f++) {
       var $this = $allElementsWithFontSizes[f];
-      var desiredFontSize = $this.getAttribute('data-srp-'+_dataattribute);
+      var desiredFontSize = $this.getAttribute('data-srp-'+attribute);
 
       // There are 0.013888888888889 inches in 1 point.
       // To convert from points to inches, multiply your figure by 0.013888888888889 (or divide by 72) .
