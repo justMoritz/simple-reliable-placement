@@ -41,8 +41,8 @@ var srpjs = (function(){
       // To convert from points to inches, multiply your figure by 0.013888888888889 (or divide by 72) .
       var desiredFontSizeInInches = desiredFontSize / 72;
 
-      // this callcularion is rough, and mainly a proof of concept
-      // It's the ratio of the actual rendered width of the parent/brochure vs its desired inch width,
+      // this callculation is the ratio of
+      // the actual rendered width of the parent/brochure vs its desired inch width,
       // that ratio multiplied times the desiredPixelSize of the font
       var requiredFontSize = (parentRenderWidth / parentInchWidth) * desiredFontSizeInInches;
 
